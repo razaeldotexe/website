@@ -1,4 +1,3 @@
-import "./App.css";
 import Profile from "./components/Profile";
 import LinkList from "./components/LinkList";
 import DatabaseGrid from "./components/DatabaseGrid";
@@ -6,8 +5,8 @@ import profileData from "./database/profile.json";
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="content-wrapper">
+    <div className="min-h-screen bg-background text-foreground flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md space-y-8">
         <Profile
           name={profileData.name}
           bio={profileData.bio}
@@ -16,7 +15,16 @@ function App() {
 
         <LinkList links={profileData.socials} />
 
-        <div className="divider">What I Like</div>
+        <div className="relative py-4">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t border-border" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-background px-2 text-muted-foreground">
+              What I Like
+            </span>
+          </div>
+        </div>
 
         <DatabaseGrid />
       </div>

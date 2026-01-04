@@ -8,20 +8,28 @@ const iconMap = {
   whatsapp: <FaWhatsapp />,
 };
 
+import { Button } from "@/components/ui/button";
+
 const LinkList = ({ links }) => {
   return (
-    <div className="link-list">
+    <div className="flex flex-col gap-3 w-full">
       {links.map((link) => (
-        <a
+        <Button
           key={link.id}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-link-btn"
+          asChild
+          variant="outline"
+          className="w-full h-12 text-base font-medium transition-all hover:scale-105"
         >
-          <span className="link-icon">{iconMap[link.icon] || null}</span>
-          {link.platform}
-        </a>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2"
+          >
+            <span className="text-xl">{iconMap[link.icon] || null}</span>
+            {link.platform}
+          </a>
+        </Button>
       ))}
     </div>
   );

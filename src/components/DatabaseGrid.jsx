@@ -1,13 +1,11 @@
-import { useState } from "react";
 import Card from "./Card";
 import songs from "../database/songs.json";
 import artists from "../database/artists.json";
 import books from "../database/books.json";
 import games from "../database/games.json";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const DatabaseGrid = () => {
-  const [activeTab, setActiveTab] = useState("songs");
-
   const tabs = [
     { id: "songs", label: "Songs", data: songs },
     { id: "artists", label: "Artists", data: artists },
@@ -15,44 +13,47 @@ const DatabaseGrid = () => {
     { id: "games", label: "Games", data: games },
   ];
 
-  const currentData = tabs.find((t) => t.id === activeTab)?.data || [];
-
   return (
-    <div className="database-container">
-      <div className="tabs">
+    <Tabs defaultValue="songs" className="w-full">
+      <TabsList className="grid w-full grid-cols-4">
         {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`tab-btn ${activeTab === tab.id ? "active" : ""}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
+          <TabsTrigger key={tab.id} value={tab.id}>
             {tab.label}
-          </button>
+          </TabsTrigger>
         ))}
-      </div>
+      </TabsList>
 
-      {currentData.length > 0 ? (
-        <div className="grid-container">
-          {currentData.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title || item.name}
-              subtitle={
-                item.artist || item.author || item.platform || item.description
-              }
-              image={item.cover || item.thumbnail}
-              link={item.link}
-              type={activeTab}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="empty-state">
-          <h2>No Items Found</h2>
-          <p>This collection is currently empty.</p>
-        </div>
-      )}
-    </div>
+      {tabs.map((tab) => (
+        <TabsContent key={tab.id} value={tab.id}>
+          {tab.data.length > 0 ? (
+            <div className="flex flex-col gap-4 mt-4">
+              {tab.data.map((item) => (
+                <Card
+                  key={item.id}
+                  title={item.title || item.name}
+                  subtitle={
+                    item.artist ||
+                    item.author ||
+                    item.platform ||
+                    item.description
+                  }
+                  image={item.cover || item.thumbnail}
+                  link={item.link}
+                  type={tab.id}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center p-8 text-center border border-dashed rounded-lg mt-4 text-muted-foreground">
+              <h2 className="text-lg font-semibold text-foreground">
+                No Items Found
+              </h2>
+              <p className="text-sm">This collection is currently empty.</p>
+            </div>
+          )}
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 };
 
