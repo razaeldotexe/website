@@ -1,4 +1,12 @@
 import PropTypes from "prop-types";
+import { FaInstagram, FaGithub, FaTwitter, FaWhatsapp } from "react-icons/fa";
+
+const iconMap = {
+  instagram: <FaInstagram />,
+  github: <FaGithub />,
+  twitter: <FaTwitter />,
+  whatsapp: <FaWhatsapp />,
+};
 
 const LinkList = ({ links }) => {
   return (
@@ -11,6 +19,7 @@ const LinkList = ({ links }) => {
           rel="noopener noreferrer"
           className="social-link-btn"
         >
+          <span className="link-icon">{iconMap[link.icon] || null}</span>
           {link.platform}
         </a>
       ))}
