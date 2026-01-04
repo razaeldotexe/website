@@ -3,18 +3,18 @@
     "id": 1,
     "name": "Lil Uzi Vert",
     "description": "Innovative rapper known for his emo-rap style.",
-    "thumbnail": "/assets/Lil Uzi Vert.jpg"
+    "thumbnail": "/assets/artists/Lil Uzi Vert.jpg"
   },
   {
     "id": 2,
     "name": "The Weeknd",
     "description": "R&B superstar with a cinematic sound.",
-    "thumbnail": "/assets/The Weeknd.jpg"
+    "thumbnail": "/assets/artists/The Weeknd.jpg"
   },
   {
     "id": 3,
     "name": "Alan Walker",
     "description": "Table-smashing DJ and producer known for Faded.",
-    "thumbnail": "/assets/Alan Walker.jpg"
+    "thumbnail": "/assets/artists/Alan Walker.jpg"
   }
 ]

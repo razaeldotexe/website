@@ -1,16 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Elden Ring",
-    "platform": "PC / PS5",
-    "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png",
-    "description": "A vast world full of excitement and excitement."
+    "title": "Minecraft",
+    "platform": "PC / Console / Mobile",
+    "cover": "/assets/games/Minecraft.jpg",
+    "description": "A sandbox game where you can build anything you want."
   },
   {
     "id": 2,
-    "title": "Valorant",
-    "platform": "PC",
-    "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1200px-Valorant_logo_-_pink_color_version.svg.png",
-    "description": "A 5v5 character-based tactical shooter."
+    "title": "Call Of Duty: Mobile",
+    "platform": "Mobile",
+    "cover": "/assets/games/Call Of Duty Mobile.jpg",
+    "description": "A tactical first-person shooter."
+  },
+  {
+    "id": 3,
+    "title": "Mobile Legends: Bang Bang",
+    "platform": "Mobile",
+    "cover": "/assets/games/Mobile Legends.jpg",
+    "description": "A tactical mobile game where you can play with your friends."
   }
 ]
