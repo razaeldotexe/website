@@ -2,7 +2,7 @@
   "name": "website-gabut",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://razaeldotexe.github.io/website-gabut",
+  "homepage": "https://www.razael-crunchy.web.id",
   "type": "module",
   "scripts": {
     "dev": "vite",
