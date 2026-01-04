@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "title": "XO Tour Llif3",
+    "title": "20 Min",
     "artist": "Lil Uzi Vert",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Lil_Uzi_Vert_-_XO_Tour_Llif3.png/220px-Lil_Uzi_Vert_-_XO_Tour_Llif3.png",
-    "link": "https://open.spotify.com"
+    "cover": "/assets/20 Min - Lil Uzi Vert.webp",
+    "link": "https://music.youtube.com/watch?v=rj9sZsKE7-g&si=GEVbMJzgzDqlaVLY"
   },
   {
     "id": 2,
-    "title": "Die For You",
+    "title": "Starboy (feat. Daft Punk)",
     "artist": "The Weeknd",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
-    "link": "https://open.spotify.com"
+    "cover": "/assets/Starboy (feat. Daft Punk) - The Weeknd.jpg",
+    "link": "https://music.youtube.com/watch?v=3_g2un5M350&si=SfZtVMrDe1A_IBY7"
   },
   {
     "id": 3,
-    "title": "Glimpse of Us",
-    "artist": "Joji",
-    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c5/Joji_-_Glimpse_of_Us.png",
-    "link": "https://open.spotify.com"
+    "title": "Wasted Remix",
+    "artist": "Neoo P",
+    "cover": "/assets/Wasted Remix - Neoo P.jpg",
+    "link": "https://music.youtube.com/watch?v=SHiAcNMUn5w&si=Jvv6Umu0dTG4U3Lvm"
   }
 ]
