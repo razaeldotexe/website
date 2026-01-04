@@ -1,10 +1,10 @@
 {
-    "tiktokArtist": [
-        {
-            "id": 1,
-            "name": "Lil Uzi Vert",
-            "description": "My first rap artist",
-            "thumbnail": ""
-        }
-    ]
+  "universalArtist": [
+    {
+      "id": 1,
+      "name": "Lil Uzi Vert",
+      "description": "My first rap artist",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Lil_Uzi_Vert_%282018%29.png/250px-Lil_Uzi_Vert_%282018%29.png"
+    }
+  ]
 }

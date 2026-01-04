@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Lil Uzi Vert",
+    "description": "Innovative rapper known for his emo-rap style.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Lil_Uzi_Vert_%282018%29.png/250px-Lil_Uzi_Vert_%282018%29.png"
+  },
+  {
+    "id": 2,
+    "name": "The Weeknd",
+    "description": "R&B superstar with a cinematic sound.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/e/e8/The_Weeknd_Cannes_2023.png"
+  },
+  {
+    "id": 3,
+    "name": "Joji",
+    "description": "Master of lo-fi and melancholic pop.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Joji_at_Head_in_the_Clouds_Festival_2019.jpg/640px-Joji_at_Head_in_the_Clouds_Festival_2019.jpg"
+  }
+]

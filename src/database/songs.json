@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "XO Tour Llif3",
+    "artist": "Lil Uzi Vert",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Lil_Uzi_Vert_-_XO_Tour_Llif3.png/220px-Lil_Uzi_Vert_-_XO_Tour_Llif3.png",
+    "link": "https://open.spotify.com"
+  },
+  {
+    "id": 2,
+    "title": "Die For You",
+    "artist": "The Weeknd",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
+    "link": "https://open.spotify.com"
+  },
+  {
+    "id": 3,
+    "title": "Glimpse of Us",
+    "artist": "Joji",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/c/c5/Joji_-_Glimpse_of_Us.png",
+    "link": "https://open.spotify.com"
+  }
+]

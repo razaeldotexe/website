@@ -1,22 +1,24 @@
 import "./App.css";
-import artistData from "./database/top artis.json";
+import Profile from "./components/Profile";
+import LinkList from "./components/LinkList";
+import DatabaseGrid from "./components/DatabaseGrid";
+import profileData from "./database/profile.json";
 
 function App() {
-  const { tiktokArtist } = artistData;
-
   return (
-    <div className="container">
-      <h1>Top Artists</h1>
-      <div className="artist-list">
-        {tiktokArtist.map((artist) => (
-          <div key={artist.id} className="artist-card">
-            {artist.thumbnail && (
-              <img src={artist.thumbnail} alt={artist.name} />
-            )}
-            <h2>{artist.name}</h2>
-            <p>{artist.description}</p>
-          </div>
-        ))}
+    <div className="app-container">
+      <div className="content-wrapper">
+        <Profile
+          name={profileData.name}
+          bio={profileData.bio}
+          avatar={profileData.avatar}
+        />
+
+        <LinkList links={profileData.socials} />
+
+        <div className="divider"></div>
+
+        <DatabaseGrid />
       </div>
     </div>
   );
