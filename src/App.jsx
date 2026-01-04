@@ -2,10 +2,14 @@ import Profile from "./components/Profile";
 import LinkList from "./components/LinkList";
 import DatabaseGrid from "./components/DatabaseGrid";
 import profileData from "./database/profile.json";
+import { ModeToggle } from "./components/mode-toggle";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background text-foreground flex justify-center py-12 px-4 sm:px-6 lg:px-8 relative">
+      <div className="absolute top-4 right-4">
+        <ModeToggle />
+      </div>
       <div className="w-full max-w-md space-y-8">
         <Profile
           name={profileData.name}
