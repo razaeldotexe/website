@@ -1,38 +1,43 @@
-import Profile from "./components/Profile";
-import LinkList from "./components/LinkList";
-import DatabaseGrid from "./components/DatabaseGrid";
-import profileData from "./database/profile.json";
-import { ModeToggle } from "./components/mode-toggle";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Login from "./pages/Login";
+import AdminLayout from "./pages/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import ProfileEditor from "./pages/admin/ProfileEditor";
+import PostManager from "./pages/admin/PostManager";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex justify-center py-12 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute top-4 right-4">
-        <ModeToggle />
-      </div>
-      <div className="w-full max-w-md space-y-8">
-        <Profile
-          name={profileData.name}
-          bio={profileData.bio}
-          avatar={profileData.avatar}
-        />
+    <Router>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Route>
 
-        <LinkList links={profileData.socials} />
+        {/* Login Route */}
+        <Route path="/login" element={<Login />} />
 
-        <div className="relative py-4">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-border" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
-              What I Like
-            </span>
-          </div>
-        </div>
-
-        <DatabaseGrid />
-      </div>
-    </div>
+        {/* Protected Admin Routes */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="profile" element={<ProfileEditor />} />
+          <Route path="posts" element={<PostManager />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
