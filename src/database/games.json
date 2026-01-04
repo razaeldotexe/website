@@ -3,21 +3,21 @@
     "id": 1,
     "title": "Minecraft",
     "platform": "PC / Console / Mobile",
-    "cover": "/assets/games/Minecraft.jpg",
+    "cover": "assets/games/Minecraft.jpg",
     "description": "A sandbox game where you can build anything you want."
   },
   {
     "id": 2,
     "title": "Call Of Duty: Mobile",
     "platform": "Mobile",
-    "cover": "/assets/games/Call Of Duty Mobile.jpg",
+    "cover": "assets/games/Call Of Duty Mobile.jpg",
     "description": "A tactical first-person shooter."
   },
   {
     "id": 3,
     "title": "Mobile Legends: Bang Bang",
     "platform": "Mobile",
-    "cover": "/assets/games/Mobile Legends.webp",
+    "cover": "assets/games/Mobile Legends.webp",
     "description": "A tactical mobile game where you can play with your friends."
   }
 ]
