@@ -56,11 +56,12 @@
 
 /* Link List */
 .link-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.8rem;
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .social-link-btn {
@@ -72,6 +73,8 @@
   font-weight: 600;
   transition: all var(--transition-speed);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  text-align: center;
 }
 
 .social-link-btn:hover {
@@ -236,36 +239,78 @@
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
+  .app-container {
+    padding: 1.5rem 1rem;
+  }
+
   .grid-container {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .card {
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+    min-height: 80px;
   }
 
   .card-image-container {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
     aspect-ratio: 1;
   }
 
   .card-info {
     flex: 1;
+    padding: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
+  .profile-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-name {
+    font-size: 1.75rem;
+  }
+
+  /* Scrollable tabs for cleaner mobile look */
   .tabs {
-    width: 100%;
-    justify-content: space-between;
-    border-radius: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    width: auto;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem 0.5rem;
+    border-radius: 0;
+    background: transparent;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .tab-btn {
-    flex: 1;
-    padding: 0.6rem 0.5rem;
+    flex: 0 0 auto;
+    padding: 0.6rem 1rem;
     font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .tab-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
   }
 }
 
@@ -358,13 +403,33 @@
 }
 
 /* Stagger card animations up to 10 items */
-.card:nth-child(1) { animation-delay: 0.7s; }
-.card:nth-child(2) { animation-delay: 0.8s; }
-.card:nth-child(3) { animation-delay: 0.9s; }
-.card:nth-child(4) { animation-delay: 1.0s; }
-.card:nth-child(5) { animation-delay: 1.1s; }
-.card:nth-child(6) { animation-delay: 1.2s; }
-.card:nth-child(7) { animation-delay: 1.3s; }
-.card:nth-child(8) { animation-delay: 1.4s; }
-.card:nth-child(9) { animation-delay: 1.5s; }
-.card:nth-child(10) { animation-delay: 1.6s; }
+.card:nth-child(1) {
+  animation-delay: 0.7s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.card:nth-child(4) {
+  animation-delay: 1s;
+}
+.card:nth-child(5) {
+  animation-delay: 1.1s;
+}
+.card:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.card:nth-child(7) {
+  animation-delay: 1.3s;
+}
+.card:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.card:nth-child(9) {
+  animation-delay: 1.5s;
+}
+.card:nth-child(10) {
+  animation-delay: 1.6s;
+}
