@@ -234,7 +234,7 @@
 .card.songs .card-image-container,
 .card.artists .card-image-container,
 .card.games .card-image-container {
-  border-radius: 0;
+  /* Allow border radius to be inherited or controlled by parent */
 }
 
 /* Responsive adjustments */
