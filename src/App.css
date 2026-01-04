@@ -256,6 +256,14 @@
     min-height: 80px;
   }
 
+  /* Force link wrapper to use row layout too */
+  .card-link-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
   .card-image-container {
     width: 85px;
     height: 85px;
