@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useContent } from "@/components/content-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,22 +25,30 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { MarkdownToolbar } from "@/components/MarkdownToolbar";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const PostManager = () => {
   const { posts, addPost, deletePost, updatePost } = useContent();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingPost, setEditingPost] = useState(null);
   const [formData, setFormData] = useState({ title: "", content: "" });
+  const [activeTab, setActiveTab] = useState("write");
+  const textareaRef = useRef(null);
 
   const openNewDialog = () => {
     setEditingPost(null);
     setFormData({ title: "", content: "" });
+    setActiveTab("write");
     setIsDialogOpen(true);
   };
 
   const openEditDialog = (post) => {
     setEditingPost(post);
     setFormData({ title: post.title, content: post.content });
+    setActiveTab("write");
     setIsDialogOpen(true);
   };
 
@@ -122,7 +130,7 @@ const PostManager = () => {
       </Card>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{editingPost ? "Edit Post" : "New Post"}</DialogTitle>
           </DialogHeader>
@@ -137,17 +145,44 @@ const PostManager = () => {
                 required
               />
             </div>
-            <div className="space-y-2">
-              <Textarea
-                placeholder="Content"
-                className="min-h-[200px]"
-                value={formData.content}
-                onChange={(e) =>
-                  setFormData({ ...formData, content: e.target.value })
-                }
-                required
-              />
-            </div>
+
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="write">Write</TabsTrigger>
+                <TabsTrigger value="preview">Preview</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="write" className="space-y-2">
+                <MarkdownToolbar textareaRef={textareaRef} />
+                <Textarea
+                  ref={textareaRef}
+                  placeholder="Content (supports markdown)"
+                  className="min-h-[300px] font-mono text-sm"
+                  value={formData.content}
+                  onChange={(e) =>
+                    setFormData({ ...formData, content: e.target.value })
+                  }
+                  required
+                />
+              </TabsContent>
+
+              <TabsContent value="preview" className="space-y-2">
+                <div className="border rounded-md p-4 min-h-[300px] bg-muted/30">
+                  {formData.content ? (
+                    <div className="prose prose-invert prose-sm max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {formData.content}
+                      </ReactMarkdown>
+                    </div>
+                  ) : (
+                    <p className="text-muted-foreground text-sm">
+                      Nothing to preview yet. Start writing in the Write tab!
+                    </p>
+                  )}
+                </div>
+              </TabsContent>
+            </Tabs>
+
             <div className="flex justify-end gap-2">
               <Button
                 type="button"

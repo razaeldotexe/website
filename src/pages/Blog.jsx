@@ -1,6 +1,8 @@
 import { useContent } from "@/components/content-provider";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const Blog = () => {
   const { posts } = useContent();
@@ -21,10 +23,12 @@ const Blog = () => {
           </div>
         ) : (
           posts.map((post) => {
+            // Strip markdown for preview
+            const plainText = post.content.replace(/[#*`_~\[\]()]/g, "");
             const preview =
-              post.content.length > 150
-                ? post.content.substring(0, 150) + "..."
-                : post.content;
+              plainText.length > 150
+                ? plainText.substring(0, 150) + "..."
+                : plainText;
 
             return (
               <article
@@ -35,7 +39,7 @@ const Blog = () => {
                 <p className="text-muted-foreground mb-4">
                   {new Date(post.date).toLocaleDateString()}
                 </p>
-                <p className="mb-4 whitespace-pre-wrap">{preview}</p>
+                <p className="mb-4 text-foreground/80">{preview}</p>
                 <Button variant="outline" size="sm" asChild>
                   <Link to={`/blog/${post.id}`}>Read More →</Link>
                 </Button>

@@ -2,6 +2,8 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useContent } from "@/components/content-provider";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -45,10 +47,10 @@ const BlogPost = () => {
             day: "numeric",
           })}
         </p>
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="whitespace-pre-wrap text-foreground leading-relaxed">
+        <div className="prose prose-lg prose-invert max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content}
-          </p>
+          </ReactMarkdown>
         </div>
       </article>
     </div>
