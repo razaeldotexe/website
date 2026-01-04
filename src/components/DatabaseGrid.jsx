@@ -31,20 +31,27 @@ const DatabaseGrid = () => {
         ))}
       </div>
 
-      <div className="grid-container">
-        {currentData.map((item) => (
-          <Card
-            key={item.id}
-            title={item.title || item.name}
-            subtitle={
-              item.artist || item.author || item.platform || item.description
-            }
-            image={item.cover || item.thumbnail}
-            link={item.link}
-            type={activeTab}
-          />
-        ))}
-      </div>
+      {currentData.length > 0 ? (
+        <div className="grid-container">
+          {currentData.map((item) => (
+            <Card
+              key={item.id}
+              title={item.title || item.name}
+              subtitle={
+                item.artist || item.author || item.platform || item.description
+              }
+              image={item.cover || item.thumbnail}
+              link={item.link}
+              type={activeTab}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="empty-state">
+          <h2>No Items Found</h2>
+          <p>This collection is currently empty.</p>
+        </div>
+      )}
     </div>
   );
 };

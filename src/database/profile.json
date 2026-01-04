@@ -1,25 +1,25 @@
 {
-  "name": "Raza",
+  "name": "Razael Saputra",
   "bio": "Developer | Gamer | Music Lover. Welcome to my personal database.",
-  "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Raza",
+  "avatar": "https://avatars.githubusercontent.com/u/249066396?v=4",
   "socials": [
     {
       "id": 1,
       "platform": "Instagram",
-      "url": "https://instagram.com",
+      "url": "https://www.instagram.com/razael.deb",
       "icon": "instagram"
     },
     {
       "id": 2,
       "platform": "GitHub",
-      "url": "https://github.com",
+      "url": "https://github.com/razaeldotexe",
       "icon": "github"
     },
     {
       "id": 3,
-      "platform": "Twitter",
-      "url": "https://twitter.com",
-      "icon": "twitter"
+      "platform": "WhatsApp",
+      "url": "https://wa.me/6282379311545",
+      "icon": "whatsapp"
     }
   ]
 }

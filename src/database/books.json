@@ -1,16 +1,1 @@
-[
-  {
-    "id": 1,
-    "title": "Atomic Habits",
-    "author": "James Clear",
-    "cover": "/assets/books/Atomic Habits.jpg",
-    "description": "An easy & proven way to build good habits & break bad ones."
-  },
-  {
-    "id": 2,
-    "title": "The Psychology of Money",
-    "author": "Morgan Housel",
-    "cover": "/assets/books/The Psychology of Money.jpg",
-    "description": "Timeless lessons on wealth, greed, and happiness."
-  }
-]
+[]

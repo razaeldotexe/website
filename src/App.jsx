@@ -16,7 +16,7 @@ function App() {
 
         <LinkList links={profileData.socials} />
 
-        <div className="divider"></div>
+        <div className="divider">What I Like</div>
 
         <DatabaseGrid />
       </div>
