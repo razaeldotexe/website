@@ -19,5 +19,19 @@
     "artist": "Neoo P",
     "cover": "assets/songs/Wasted Remix - Neoo P.jpg",
     "link": "https://music.youtube.com/watch?v=SHiAcNMUn5w&si=Jvv6Umu0dTG4U3Lvm"
+  },
+  {
+    "id": 4,
+    "title": "Minefields",
+    "artist": "Faouzia, John Legend",
+    "cover": "assets/songs/Minefields - Faouzia, John Legend.png",
+    "link": "https://music.youtube.com/watch?v=P12elIHd2e8"
+  },
+  {
+    "id": 5,
+    "title": "Heat Waves (Japanese Version)",
+    "artist": "Lime",
+    "cover": "",
+    "link": "https://music.youtube.com/watch?v=5jbjN0Ai9X4"
   }
 ]
